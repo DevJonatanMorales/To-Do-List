@@ -17,7 +17,8 @@ export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
   const [tareas, setTareas] = useState(null);
-  const [accion, setAccion] = useState(null)
+  const [accion, setAccion] = useState(null);
+  const [position, setPosition] = useState(0);
 
   const [data, setData] = useState({
     tarea: "",
@@ -30,18 +31,21 @@ export const DataProvider = ({ children }) => {
 
     if (localStorage.getItem("tareas")) {
       dataLocalStorage = Array.from(JSON.parse(localStorage.getItem("tareas")))
+      if (dataLocalStorage.length > 0) {
+        setTareas(dataLocalStorage)
+
+      }
     }
-    setTareas(dataLocalStorage)
   };
 
   const Clear = (nom_tarea) => {
-    console.log("nom_tarea:", nom_tarea);
     let tareas = Array.from(JSON.parse(localStorage.getItem("tareas")))
 
     const removerTareas = tareas.filter(element => element.tarea != nom_tarea);
 
     localStorage.setItem('tareas', JSON.stringify(removerTareas));
     CargarTareas()
+    setPosition(0)
   }
 
   const removeTask = (nom_tarea) => {
@@ -65,8 +69,6 @@ export const DataProvider = ({ children }) => {
 
   }
 
-  const [position, setPosition] = useState(0);
-
   const AddTareas = () => {
     if (data.tarea == "" || data.estado == 0 || data.descripcion == '') {
       Sweetalert("Error: por favor complete los campos.", "error")
@@ -84,10 +86,23 @@ export const DataProvider = ({ children }) => {
         Sweetalert("Agregado con exito", "success");
         // reset data
         setData(localStorage)
+        setPosition(0)
       } else {
         Sweetalert(mjsAlert, "error");
       }
     }
+  }
+
+  const UpdateTask = () => {
+    let tareas = Array.from(JSON.parse(localStorage.getItem("tareas")))
+    tareas[position].tarea = data.tarea
+    tareas[position].descripcion = data.descripcion
+    tareas[position].estado = data.estado
+
+    localStorage.setItem('tareas', JSON.stringify(tareas));
+    CargarTareas()
+    setPosition(0)
+    Sweetalert("Modificado con exito", "success");
   }
 
   useEffect(() => {
@@ -95,7 +110,7 @@ export const DataProvider = ({ children }) => {
   }, [data])
 
   return (
-    <DataContext.Provider value={{ removeTask, tareas, AddTareas, data, setData, position, setPosition, accion, setAccion }} >
+    <DataContext.Provider value={{ removeTask, tareas, AddTareas, data, setData, position, setPosition, accion, setAccion, UpdateTask }} >
       {children}
     </DataContext.Provider>
   )

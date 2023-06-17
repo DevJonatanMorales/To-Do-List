@@ -4,7 +4,7 @@ import { DataContext } from '../../context/ContextLocalStorage'
 import { iconGuardar, iconModificar, Clear } from '../../pages/AppFun'
 
 export const Options = () => {
-    const { AddTareas, removeTask, setAccion } = useContext(DataContext)
+    const { data, setData, tareas, position, AddTareas, removeTask, setAccion, accion, UpdateTask } = useContext(DataContext)
 
     const Guardar = () => {
         const btnGuardar = document.getElementById("btnNuevo");
@@ -25,7 +25,11 @@ export const Options = () => {
                 break;
 
             case 'guardar':
-                AddTareas()
+                if (accion === "nuevo") {
+                    AddTareas()
+                } else if (accion === "modificar") {
+                    UpdateTask()
+                }
                 btnGuardar.dataset.tag = "nuevo"
                 iconGuardar(btnGuardar.children[0]);
                 setAccion(null)
@@ -41,17 +45,28 @@ export const Options = () => {
     }
 
     const Modificar = () => {
+        const tarea = document.getElementById("txtName")
+        const descripcion = document.getElementById("txtDescripcion")
+        const estado = document.getElementById("txtEstado")
+
         const btnGuardar = document.getElementById("btnNuevo");
         const btnModificar = document.getElementById("btnModificar");
 
         switch (btnModificar.dataset.tag) {
             case 'modificar':
+                setAccion('modificar')
                 form.disabled = false
                 btnModificar.dataset.tag = "cancelar"
                 iconModificar(btnModificar.children[0]);
 
                 btnGuardar.dataset.tag = "guardar"
                 iconGuardar(btnGuardar.children[0]);
+                setData({
+                    ...data,
+                    tarea: tarea.value,
+                    descripcion: descripcion.value,
+                    estado: estado.value
+                })
                 break;
             case 'cancelar':
                 btnModificar.dataset.tag = "modificar"
@@ -60,6 +75,14 @@ export const Options = () => {
                 btnGuardar.dataset.tag = "nuevo"
                 iconGuardar(btnGuardar.children[0]);
                 form.disabled = true
+
+
+                setAccion(null)
+                setData({
+                    tarea: "",
+                    descripcion: "",
+                    estado: "",
+                })
                 break;
 
             default:

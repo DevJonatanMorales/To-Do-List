@@ -24,7 +24,9 @@ export const Pagination = () => {
   const last = () => setPosition(tareas.length - 1);
 
   return (
-    <fieldset className="paginacion">
+    <fieldset
+      className="paginacion"
+    >
       <legend className="paginacion__title">Navegación</legend>
       <div className="paginacion__btns">
         <button
