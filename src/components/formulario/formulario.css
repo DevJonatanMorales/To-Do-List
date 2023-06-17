@@ -1,0 +1,81 @@
+.formulario {
+    border: 1px solid #FFFFFA;
+    padding: 1.3rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.formulario__title {
+    color: #FFFFFA;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+}
+
+.lb {
+    color: #FFFFFA;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.txt {
+    color: #FFFFFA;
+    background-color: #0951BD;
+    border: 1px solid #0951BD;
+    outline: #0951BD;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+select {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #FFFFFA;
+    background-color: #0951BD;
+    border: 1px solid #0951BD;
+    border-radius: 12px;
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+option {
+    color: #FFFFFA;
+    background-color: #0951BD;
+    border: 1px solid #0951BD;
+    border-radius: 12px;
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+select:hover {
+    background-color: #0D6EFD;
+
+}
+
+.txt:focus {
+    border: 1px solid #0D6EFD;
+    outline: #0D6EFD;
+    /*box-shadow: 3px 3px 5px #0D6EFD; */
+
+}
+
+.textarea {
+    color: #FFFFFA;
+    width: 100%;
+    height: 150px;
+    overflow: scroll;
+    resize: none;
+    background-color: #0951BD;
+    border: 1px solid #0951BD;
+    outline: #0951BD;
+    margin-top: 10px;
+    border-radius: 12px;
+    padding: 10px 15px;
+    font-size: 14px;
+}

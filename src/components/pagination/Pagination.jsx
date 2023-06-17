@@ -42,7 +42,7 @@ export const Pagination = () => {
           <i className="fa-solid fa-angle-left"></i>
         </button>
 
-        <p className="paginacion__info"> {tareas != null ? tareas.length : '0'} / {tareas != null ? position + 1 : '0'} </p>
+        <p className="paginacion__info"> {tareas != null ? position + 1 : '0'} / {tareas != null ? tareas.length : '0'} </p>
 
         <button
           className="paginacion__btn"
