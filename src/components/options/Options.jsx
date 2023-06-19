@@ -2,14 +2,17 @@ import React, { useContext } from 'react'
 import "./Options.css"
 import { DataContext } from '../../context/ContextLocalStorage'
 import { iconGuardar, iconModificar, Clear } from '../../pages/AppFun'
+import { useNavigate } from 'react-router-dom'
 
 export const Options = () => {
+    const navigate = useNavigate();
     const { data, setData, tareas, position, AddTareas, removeTask, setAccion, accion, UpdateTask } = useContext(DataContext)
 
     const Guardar = () => {
         const btnGuardar = document.getElementById("btnNuevo");
         const btnModificar = document.getElementById("btnModificar");
         const form = document.getElementById("form")
+        const paginacion = document.getElementById('paginacion')
 
         switch (btnGuardar.dataset.tag) {
             case 'nuevo':
@@ -18,6 +21,7 @@ export const Options = () => {
                 btnGuardar.dataset.tag = "guardar"
                 iconGuardar(btnGuardar.children[0]);
                 form.disabled = false
+                paginacion.disabled = true
 
                 btnModificar.dataset.tag = "cancelar"
                 iconModificar(btnModificar.children[0]);
@@ -75,6 +79,7 @@ export const Options = () => {
                 btnGuardar.dataset.tag = "nuevo"
                 iconGuardar(btnGuardar.children[0]);
                 form.disabled = true
+                paginacion.disabled = false
 
 
                 setAccion(null)
@@ -93,6 +98,11 @@ export const Options = () => {
     const EliminarTarea = () => {
         const nom_tarea = document.getElementById("txtName").value
         removeTask(nom_tarea)
+    }
+
+    const Search = () => {
+        console.log('click');
+        navigate("/search")
     }
 
     return (
@@ -131,6 +141,7 @@ export const Options = () => {
                     type="button"
                     data-tag="buscar"
                     id='btnBuscar'
+                    onClick={() => Search()}
                 >
                     <i className="fa-solid fa-magnifying-glass"></i>
                 </button>

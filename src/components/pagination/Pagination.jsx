@@ -26,6 +26,7 @@ export const Pagination = () => {
   return (
     <fieldset
       className="paginacion"
+      id="paginacion"
     >
       <legend className="paginacion__title">Navegación</legend>
       <div className="paginacion__btns">

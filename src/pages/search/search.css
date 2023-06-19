@@ -1,0 +1,57 @@
+.table {
+    width: 800px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    padding: 0;
+    text-align: left;
+    border-collapse: collapse;
+    background-color: #626262;
+    color: #fffffa;
+}
+
+.thead {
+    background-color: #474747;
+    border-bottom: 2px solid #212529;
+}
+
+.search {
+    max-width: 800px;
+    height: 350px;
+    width: 95%x;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.tfoot {
+    background-color: #474747;
+}
+
+th,
+td {
+    padding: 15px 20px;
+}
+
+tr:nth-child(even) {
+    background-color: #6E6E6E;
+}
+
+.btn-cancelar,
+.btn-selec {
+    padding: 10px 12px;
+    border-radius: 0.5rem;
+    background-color: #212529;
+    border: 1px solid #212529;
+    color: #fffffa;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-selec:hover {
+    background-color: #474747;
+    border: 1px solid #474747;
+}
+
+.btn-cancelar:hover {
+    background-color: #474747;
+    border: 1px solid #474747;
+}

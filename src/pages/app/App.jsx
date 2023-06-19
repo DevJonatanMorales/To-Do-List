@@ -1,6 +1,6 @@
-import { Formulario } from "../components/formulario/Formulario";
-import { Options } from "../components/options/Options";
-import { Pagination } from "../components/pagination/Pagination";
+import { Formulario } from "../../components/formulario/Formulario";
+import { Options } from "../../components/options/Options";
+import { Pagination } from "../../components/pagination/Pagination";
 import "./App.css"
 
 function App() {

@@ -4,7 +4,7 @@ import { DataContext } from '../../context/ContextLocalStorage'
 
 export const Formulario = () => {
   const { tareas, data, setData, position, accion } = useContext(DataContext)
-
+  console.log(position);
   return (
     <fieldset id='form' disabled className='formulario'>
       <legend className='formulario__title'>Tarea</legend>

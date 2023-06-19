@@ -1,13 +1,14 @@
 .formulario {
-    border: 1px solid #FFFFFA;
+    border: 1px solid #EDEDED;
     padding: 1.3rem 1rem;
     border-radius: 0.5rem;
 }
 
 .formulario__title {
-    color: #FFFFFA;
+    color: #EDEDED;
     font-size: 16px;
     font-weight: 600;
+    margin-bottom: 0;
 }
 
 .form__group {
@@ -16,16 +17,16 @@
 }
 
 .lb {
-    color: #FFFFFA;
+    color: #EDEDED;
     font-size: 16px;
     font-weight: 400;
 }
 
 .txt {
-    color: #FFFFFA;
-    background-color: #0951BD;
-    border: 1px solid #0951BD;
-    outline: #0951BD;
+    color: #fff;
+    background-color: #474747;
+    border: 1px solid #474747;
+    outline: #474747;
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 12px;
@@ -37,8 +38,8 @@ select {
     margin-top: 10px;
     margin-bottom: 10px;
     color: #FFFFFA;
-    background-color: #0951BD;
-    border: 1px solid #0951BD;
+    background-color: #474747;
+    border: 1px solid #474747;
     border-radius: 12px;
     padding: 10px 15px;
     font-size: 14px;
@@ -46,22 +47,21 @@ select {
 
 option {
     color: #FFFFFA;
-    background-color: #0951BD;
-    border: 1px solid #0951BD;
+    background-color: #626262;
+    border: 1px solid #626262;
     border-radius: 12px;
     padding: 10px 15px;
     font-size: 14px;
 }
 
 select:hover {
-    background-color: #0D6EFD;
+    background-color: #474747;
 
 }
 
 .txt:focus {
-    border: 1px solid #0D6EFD;
-    outline: #0D6EFD;
-    /*box-shadow: 3px 3px 5px #0D6EFD; */
+    border: 1px solid #ADADAD;
+    outline: #ADADAD;
 
 }
 
@@ -71,9 +71,9 @@ select:hover {
     height: 150px;
     overflow: scroll;
     resize: none;
-    background-color: #0951BD;
-    border: 1px solid #0951BD;
-    outline: #0951BD;
+    background-color: #474747;
+    border: 1px solid #474747;
+    outline: #474747;
     margin-top: 10px;
     border-radius: 12px;
     padding: 10px 15px;

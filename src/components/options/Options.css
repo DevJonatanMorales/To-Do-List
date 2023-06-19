@@ -27,8 +27,8 @@
     border-radius: 12px;
     padding: 10px;
     color: #FFF;
-    background: #031A3D;
-    border: 1px solid #031A3D;
+    background: #212529;
+    border: 1px solid #212529;
 }
 
 .btn>i {
@@ -36,8 +36,8 @@
 }
 
 .btn:hover {
-    background: #0D6EFD;
-    border: 1px solid #0D6EFD;
+    background: #474747;
+    border: 1px solid #474747;
 }
 
 @media (max-width: 780px) {
